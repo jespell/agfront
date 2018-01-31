@@ -64,7 +64,6 @@ $clientNamber = $_GET['clientNamber'];
 	  <p class="well well-sm" style="color:#303030">Цели</p>
 	  
 	  <ul style="padding-left:10px;">
-	    <li>Убедить, что Автоград лучшее СТО</li>
 	    <li>Записать клиента</li>
 	    <li>Развеять сомнения</li>
 	    <li>Вовремя напомнить о договоренности</li>
