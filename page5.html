@@ -18,27 +18,14 @@
 
   </head>
   <body>
-
-  <script type="text/javascript">
-  
-  var tasks = {
-    data:[
-        {id:1, text:"Мастер 1", start_date:"10-08-2017 09:00", duration:0.5, progress: 0, open: true},
-        {id:2, text:"Мастер 2", start_date:"10-08-2017 09:00", duration:0.2, progress: 0,   open: true},
-        {id:3, text:"Мастер 3", start_date:"10-08-2017 09:00", duration:0.1, progress: 0, open: true},
-        {id:4, text:"Мастер 4", start_date:"10-08-2017 09:00", duration:0.3, progress: 0,   open: true},
-    ]
-  };
-  
-  </script>
     
     <div class="wrapper container-fluid">
       <div class="row">
-	<aside class="col-md-2 big-font text-center">
+	<header class="col-md-2 text-center">
 		    
 	  Сервис-Бюро Форд
 		    
-	</aside>
+	</header>
 	
 	<section class="col-md-7 silver-td header-height big-font">
 		    
@@ -63,66 +50,59 @@
 	
 	<!-- Левая навигация -->
 	
-	<aside class="col-md-2 col-sm-3">
-		    
-	  <p class="alert alert-info big-font">Цели</p>
-	  
-	  <ul style="padding-left:10px;">
-	    <li>Убедить, что Автоград лучшее СТО</li>
-	    <li>Записать клиента</li>
-	    <li>Развеять сомнения</li>
-	    <li>Вовремя напомнить о договоренности</li>
-	  </ul>
-	  
-	  <br />
-	  
-	  <button type="button" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-repeat" aria-hidden="true"></span></button>
-	  &nbsp;Возражения
-	  
-	  <br /><br />
-	  
-	  <input type="checkbox" /> Дорого<br />
-	  <input type="checkbox" /> Записать клиента<br />
-	  <input type="checkbox" /> Развеять сомнения<br />
+	<aside id="leftSide" class="col-md-2 col-sm-3">
+
+	  <button type="button" class="btn btn-sm btn-default" style="margin-left:15px;" onclick="location.replace('page1.php');">&nbsp;&nbsp;Создать запись&nbsp;&nbsp;</button>
 	
 	  <br /><br />
 	  
+	  <ul class="list-group submenu">
+	    <li class="list-group-item"><span class="glyphicon glyphicon-home" aria-hidden="true"></span><a href="./">Рабочий стол</a></li>
+	    <li class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span><a href="page1.php">Клиенты</a></li>
+	    <li class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span><a href="#">Планировщик</a></li>
+	    <li class="list-group-item"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span><a href="#">Отчеты</a></li>
+	    <li class="list-group-item"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span><a href="#">Журнал записи</a></li>
+	    <li class="list-group-item"><span class="glyphicon glyphicon-ruble" aria-hidden="true"></span><a href="#">Зарплата</a></li>
+	    <li class="list-group-item"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span><a href="#">Настройки</a></li>
+	  </ul>
+		    <br /><br /><br /><br />
 	</aside>
 
 	<!-- Центральная часть -->
 	
-	<section class="col-md-8 col-sm-6">
+	<section id="centerSide" class="col-md-8 col-sm-6">
 	  
-	  <!-- Центральные три колонки -->
+	  <!-- Центральные колонки -->
 	  
 	  <div class="row">
 	  
 	    <!-- Колонка 1 -->
-	    <section class="col-md-4 col-sm-4 text-center">
-	  
-	      <input type="text" class="form-control" value="VIN WF0PXXWPDP8B46137" /><br />
-	      <input type="text" class="form-control" value="г/н р545нр72" /><br />
-	      <input type="text" class="form-control" value="Петров Владислав Сергеевич" /><br />
-	      <input type="text" class="form-control" value="+7 904 567 43 55" /><br />
-	      <input type="text" class="form-control" value="Пробег: 15 000 км." /><br />
-
+	    <section class="col-md-9 col-sm-9">
+	    <br />
+	    <p class="lead">Оформление заезда</p>
+	    
+	    <form class="form-inline">
+	      <input type="text" class="form-control" value="VIN WF0PXXWPDP8B46137" style="width:50%;" />&nbsp;&nbsp;<input type="checkbox" /> <span class="medium-font">VIN сверен</span><br /><br />
+	      <input type="text" class="form-control" value="г/н р545нр72" style="width:50%;" />&nbsp;&nbsp;<input type="checkbox" /> <span class="medium-font">Гос. номер сверен</span><br /><br />
+	      <input type="text" class="form-control" value="Петров Владислав Сергеевич" style="width:50%;" /><br /><br />
+	      <input type="text" class="form-control" value="+7 904 567 43 55" style="width:50%;" />&nbsp;&nbsp;<input type="checkbox" /> <span class="medium-font">Номер телефона сверен</span><br /><br />
+	      <input type="text" class="form-control" value="Пробег: 15 000 км." style="width:50%;" />&nbsp;&nbsp;<input type="checkbox" /> <span class="medium-font">Пробег верен</span><br /><br />
+	    </form>
 	    </section>
+	   
 	    
 	    <!-- Колонка 2 -->
-	    <section class="col-md-4 col-sm-4">
-	  	
-	      <input type="checkbox" /> VIN сверен<br /><br />
-	      <input type="checkbox" /> Гос. номер сверен<br /><br />
-	      <input type="checkbox" /> Номер телефона сверен<br /><br />
-	      <input type="checkbox" /> Пробег верен <br /><br />
+	    <section class="col-md-3 col-sm-3">
+	      <br /><br />
+	      <button class="btn btn-success margin-left-45" id="dLabel" role="button" data-toggle="dropdown">История</button>
 	      
-	    </section>
-	    
-	    <!-- Колонка 3 -->
-	    <section class="col-md-4 col-sm-4 text-center">
-	  
-	      <button type="button" class="btn btn-success" data-container="body" data-toggle="popover" data-placement="left" 
-		      data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">История</button>
+	      <ul class="dropdown-menu padding-20" role="menu" aria-labelledby="dLabel">
+		<li>01.03.2017, ТО 2</li>
+		<li>14.10.2016, Шиномонтаж</li>
+		<li>06.05.2016, ТО-1</li>
+		<li>13.01.2016, ТО-0</li>
+	      </ul>
+
 	    </section>
 	  </div>
 	  
@@ -130,13 +110,14 @@
 	  
 	  <div class="row">
 	    <section class="col-md-12 col-sm-12">
-	    
-	    Причина обращения со слов клиента:<br /><br />
-	    
+	    <p class="lead">
+	      Причина обращения со слов клиента:<br />
+	    </p>
 	    <textarea class="form-control" rows="5">ТО-1</textarea><br />
 	    
-	    <input type="checkbox" /> Я Иванова Мария (оператор1) правильность данных  подтверждаю 
-	    
+	    <p class="lead">
+	      <input type="checkbox" /> Я Иванова Мария (оператор1) правильность данных  подтверждаю 
+	    </p>
 	    </section>
 	    
 	    <section class="col-md-12 col-sm-12">
@@ -147,53 +128,52 @@
 	    </section>
 	    
 	  </div>
+	  
+	  <!-- Кнопки страниц -->
+      
+	  <div class="row">
+	    <section class="col-md-1 col-sm-1">
+
+	    </section>
+	    
+	    <section id="navButtons" class="col-md-11 col-sm-11">
+	    
+	      <br /><br />
+
+	      <a href="./" role="button" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
+	      <a href="page1.php" role="button" class="btn btn-default">Карточка клиента</a>
+		<a href="page5.html" role="button" class="btn btn-default">Оформление заезда</a>
+		<a href="page6.html" role="button" class="btn btn-default">Выдача автомобиля</a>
+		<a href="page7.html" role="button" class="btn btn-default">Планировщик</a>
+	      
+	      <br /><br />
+	      
+	    </section>
+	  </div>
 
 	</section>
 	
 	<!-- Правая колонка -->
 	
-	<section class="col-md-2 col-sm-3" style="padding:0;margin:0;">
+	<section id="rightSide" class="col-md-2 col-sm-3 bg-silver" style="padding:0;margin:0;">
 	
-	  <aside class="col-md-12 col-sm-12">
+	  <section class="col-md-12 col-sm-12 right-section">
 		    
-	    <p class="alert alert-info">Обещания</p>
+	    <p class="well well-sm">Обещания</p>
 	    
-	    <ul style="padding-left:10px;">
+	    <ul style="padding-left:15px;">
 	      <li>Бесплатная мойка</li>
 	      <li>Бесплатный ужин</li>
 	      <li>Велкам скидка 40%</li>
 	      <li>Супер предложение 1</li>
 	      <li>Супер предложение 2</li>
 	    </ul>
-	  </aside>
+	  </section>
 	</section>
       </div>
+     
+    </div>
     
-      <!-- Кнопки страниц -->
-      
-      <div class="row">
-	<section class="col-md-2 col-sm-3">
-
-	</section>
-	
-	<section class="col-md-10 col-sm-9">
-	
-	  <br /><br />
-
-	  <a href="./" role="button" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
-	  <a href="page1.html" role="button" class="btn btn-default">1</a>
-	  <a href="page2.html" role="button" class="btn btn-default">2</a>
-	  <a href="page3.html" role="button" class="btn btn-default">3</a>
-	  <a href="page4.html" role="button" class="btn btn-default">4</a>
-	  <a href="page5.html" role="button" class="btn btn-default">5</a>
-	  <a href="page6.html" role="button" class="btn btn-default">6</a>
-	  <a href="page7.html" role="button" class="btn btn-default">7</a>
-	  
-	  <br /><br />
-	  
-	</section>
-      </div>
-      
     <footer></footer>    
     
     <script src="js/main.js"></script>

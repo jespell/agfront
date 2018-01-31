@@ -23,10 +23,175 @@
   
   var tasks = {
     data:[
-        {id:1, text:"Мастер 1", start_date:"10-08-2017 09:00", duration:0.5, progress: 0, open: true},
-        {id:2, text:"Мастер 2", start_date:"10-08-2017 09:00", duration:0.2, progress: 0,   open: true},
-        {id:3, text:"Мастер 3", start_date:"10-08-2017 09:00", duration:0.1, progress: 0, open: true},
-        {id:4, text:"Мастер 4", start_date:"10-08-2017 09:00", duration:0.3, progress: 0,   open: true},
+    {id:1, text:"Мастер 1", start_date:"10-08-2017 08:10", duration:0.0125, progress: 0, open: false},
+    {id:2, text:"Мастер 2", start_date:"10-08-2017 08:00", duration:0.0125, progress: 0, open: false},
+    {id:3, text:"Мастер 3", start_date:"10-08-2017 08:10", duration:0.0125, progress: 0, open: false},
+    {id:4, text:"Мастер 4", start_date:"10-08-2017 08:00", duration:0.0125, progress: 0, open: false},
+  
+    {id:7, text:"Мастер 1", start_date:"10-08-2017 08:30", duration:0.0125, progress: 0, open: true, parent: 1},
+    {id:8, text:"Мастер 1", start_date:"10-08-2017 09:10", duration:0.0125, progress: 0, open: true, parent: 1},
+    {id:13, text:"Мастер 1", start_date:"10-08-2017 09:30", duration:0.0125, progress: 0, open: true, parent: 1},
+    {id:14, text:"Мастер 1", start_date:"10-08-2017 09:50", duration:0.0125, progress: 0, open: true, parent: 1},
+    {id:15, text:"Мастер 1", start_date:"10-08-2017 10:10", duration:0.0125, progress: 0, open: true, parent: 1},
+    {id:16, text:"Мастер 1", start_date:"10-08-2017 10:50", duration:0.0125, progress: 0, open: true, parent: 1},
+    {id:17, text:"Мастер 1", start_date:"10-08-2017 11:10", duration:0.013, progress: 0, open: true, parent: 1},
+    {id:18, text:"Мастер 1", start_date:"10-08-2017 11:30", diner:"1", duration:0.026, progress: 0, open: true, parent: 1},
+    {id:19, text:"Мастер 1", start_date:"10-08-2017 12:10", duration:0.0125, progress: 0, open: true, parent: 1},
+    {id:20, text:"Мастер 1", start_date:"10-08-2017 12:30", duration:0.0125, progress: 0, open: true, parent: 1},
+    {id:21, text:"Мастер 1", start_date:"10-08-2017 12:50", duration:0.0125, progress: 0, open: true, parent: 1},
+    {id:22, text:"Мастер 1", start_date:"10-08-2017 13:10", duration:0.0125, progress: 0, open: true, parent: 1},
+    {id:23, text:"Мастер 1", start_date:"10-08-2017 13:30", work_start:"08 17 2017 13:30:00", well_done:"1", duration:0.0125, progress: 0, open: true, parent: 1},
+    {id:24, text:"Мастер 1", start_date:"10-08-2017 13:50", work_start:"08 17 2017 13:50:00", well_done:"1", duration:0.0125, progress: 0, open: true, parent: 1},
+    {id:25, text:"Мастер 1", start_date:"10-08-2017 14:10", work_start:"08 17 2017 14:10:00", well_done:"1", duration:0.0125, progress: 0, open: true, parent: 1},
+    {id:26, text:"Мастер 1", start_date:"10-08-2017 14:30", duration:0.0125, progress: 0, open: true, parent: 1},
+    {id:27, text:"Мастер 1", start_date:"10-08-2017 14:50", duration:0.0125, progress: 0, open: true, parent: 1},
+    {id:28, text:"Мастер 1", start_date:"10-08-2017 15:10", duration:0.0125, progress: 0, open: true, parent: 1},
+    {id:29, text:"Мастер 1", start_date:"10-08-2017 15:30", duration:0.0125, progress: 0, open: true, parent: 1},
+    {id:30, text:"Мастер 1", start_date:"10-08-2017 15:50", duration:0.0125, progress: 0, open: true, parent: 1},
+    {id:31, text:"Мастер 1", start_date:"10-08-2017 16:10", duration:0.0125, progress: 0, open: true, parent: 1},
+    {id:101, text:"Мастер 1", start_date:"10-08-2017 16:30", duration:0.0125, progress: 0, open: true, parent: 1},
+    {id:102, text:"Мастер 1", start_date:"10-08-2017 16:50", duration:0.0125, progress: 0, open: true, parent: 1},
+    {id:103, text:"Мастер 1", start_date:"10-08-2017 17:10", duration:0.0125, progress: 0, open: true, parent: 1},
+    {id:104, text:"Мастер 1", start_date:"10-08-2017 17:30", duration:0.0125, progress: 0, open: true, parent: 1},
+    {id:105, text:"Мастер 1", start_date:"10-08-2017 17:50", duration:0.0125, progress: 0, open: true, parent: 1},
+    {id:106, text:"Мастер 1", start_date:"10-08-2017 18:10", duration:0.0125, progress: 0, open: true, parent: 1},
+    {id:107, text:"Мастер 1", start_date:"10-08-2017 18:30", duration:0.0125, progress: 0, open: true, parent: 1},
+    {id:108, text:"Мастер 1", start_date:"10-08-2017 18:50", duration:0.0125, progress: 0, open: true, parent: 1},
+    {id:109, text:"Мастер 1", start_date:"10-08-2017 19:10", duration:0.0125, progress: 0, open: true, parent: 1},
+    {id:110, text:"Мастер 1", start_date:"10-08-2017 19:30", duration:0.0125, progress: 0, open: true, parent: 1},
+    {id:111, text:"Мастер 1", start_date:"10-08-2017 19:50", duration:0.0125, progress: 0, open: true, parent: 1},
+    {id:112, text:"Мастер 1", start_date:"10-08-2017 20:10", duration:0.0125, progress: 0, open: true, parent: 1},
+    {id:113, text:"Мастер 1", start_date:"10-08-2017 20:30", duration:0.0125, progress: 0, open: true, parent: 1},
+    {id:114, text:"Мастер 1", start_date:"10-08-2017 20:50", duration:0.0125, progress: 0, open: true, parent: 1},
+    {id:115, text:"Мастер 1", start_date:"10-08-2017 21:10", duration:0.0125, progress: 0, open: true, parent: 1},
+    {id:116, text:"Мастер 1", start_date:"10-08-2017 21:30", duration:0.0125, progress: 0, open: true, parent: 1},
+    {id:117, text:"Мастер 1", start_date:"10-08-2017 21:50", duration:0.0125, progress: 0, open: true, parent: 1},
+    {id:159, text:"Мастер 1", start_date:"10-08-2017 08:50", pl:"1", duration:0.0125, progress: 0, open: true, parent: 1},
+    {id:160, text:"Мастер 1", start_date:"10-08-2017 10:30", pr:"1", duration:0.0125, progress: 0, open: true, parent: 1},
+    
+    {id:9, text:"Мастер 2", start_date:"10-08-2017 08:20", duration:0.0125, progress: 0, open: true, parent: 2},
+    {id:10, text:"Мастер 2", start_date:"10-08-2017 08:40", pl:"1", duration:0.0125, progress: 0, open: true, parent: 2},
+    {id:161, text:"Мастер 2", start_date:"10-08-2017 09:00", duration:0.0125, progress: 0, open: true, parent: 2},
+    {id:32, text:"Мастер 2", start_date:"10-08-2017 09:20", duration:0.0125, progress: 0, open: true, parent: 2},
+    {id:33, text:"Мастер 2", start_date:"10-08-2017 09:40", duration:0.0125, progress: 0, open: true, parent: 2},
+    {id:34, text:"Мастер 2", start_date:"10-08-2017 10:20", duration:0.0125, progress: 0, open: true, parent: 2},
+    {id:35, text:"Мастер 2", start_date:"10-08-2017 10:40", duration:0.0125, progress: 0, open: true, parent: 2},
+    {id:36, text:"Мастер 2", start_date:"10-08-2017 11:00", duration:0.0125, progress: 0, open: true, parent: 2},
+    {id:37, text:"Мастер 2", start_date:"10-08-2017 11:20", duration:0.0125, progress: 0, open: true, parent: 2},
+    {id:38, text:"Мастер 2", start_date:"10-08-2017 11:40", duration:0.0125, progress: 0, open: true, parent: 2},
+    {id:39, text:"Мастер 2", start_date:"10-08-2017 12:00", diner:"1", duration:0.026, progress: 0, open: true, parent: 2},
+    {id:40, text:"Мастер 2", start_date:"10-08-2017 12:40", duration:0.0125, progress: 0, open: true, parent: 2},
+    {id:41, text:"Мастер 2", start_date:"10-08-2017 13:00", duration:0.0125, progress: 0, open: true, parent: 2},
+    {id:42, text:"Мастер 2", start_date:"10-08-2017 13:20", duration:0.0125, progress: 0, open: true, parent: 2},
+    {id:43, text:"Мастер 2", start_date:"10-08-2017 13:40", duration:0.0125, progress: 0, open: true, parent: 2},
+    {id:44, text:"Мастер 2", start_date:"10-08-2017 14:00", duration:0.0125, work_start:"08 17 2017 14:00:00", well_done:"1", progress: 0, open: true, parent: 2},
+    {id:45, text:"Мастер 2", start_date:"10-08-2017 14:20", duration:0.0125, work_start:"08 17 2017 14:20:00", well_done:"1", progress: 0, open: true, parent: 2},
+    {id:46, text:"Мастер 2", start_date:"10-08-2017 14:40", duration:0.0125, work_start:"08 17 2017 14:40:00", well_done:"1", progress: 0, open: true, parent: 2},
+    {id:47, text:"Мастер 2", start_date:"10-08-2017 15:00", duration:0.0125, progress: 0, open: true, parent: 2},
+    {id:48, text:"Мастер 2", start_date:"10-08-2017 15:20", duration:0.0125, progress: 0, open: true, parent: 2},
+    {id:49, text:"Мастер 2", start_date:"10-08-2017 15:40", duration:0.0125, progress: 0, open: true, parent: 2},
+    {id:50, text:"Мастер 2", start_date:"10-08-2017 16:00", duration:0.0125, progress: 0, open: true, parent: 2},
+    {id:97, text:"Мастер 2", start_date:"10-08-2017 16:20", duration:0.0125, progress: 0, open: true, parent: 2},
+    {id:98, text:"Мастер 2", start_date:"10-08-2017 16:40", duration:0.0125, progress: 0, open: true, parent: 2},
+    {id:99, text:"Мастер 2", start_date:"10-08-2017 17:00", duration:0.0125, progress: 0, open: true, parent: 2},
+    {id:100, text:"Мастер 2", start_date:"10-08-2017 17:20", duration:0.0125, progress: 0, open: true, parent: 2},
+    {id:118, text:"Мастер 2", start_date:"10-08-2017 17:40", duration:0.0125, progress: 0, open: true, parent: 2},
+    {id:119, text:"Мастер 2", start_date:"10-08-2017 18:00", duration:0.0125, progress: 0, open: true, parent: 2},
+    {id:120, text:"Мастер 2", start_date:"10-08-2017 18:20", duration:0.0125, progress: 0, open: true, parent: 2},
+    {id:121, text:"Мастер 2", start_date:"10-08-2017 18:40", duration:0.0125, progress: 0, open: true, parent: 2},
+    {id:122, text:"Мастер 2", start_date:"10-08-2017 19:00", duration:0.0125, progress: 0, open: true, parent: 2},
+    {id:123, text:"Мастер 2", start_date:"10-08-2017 19:20", duration:0.0125, progress: 0, open: true, parent: 2},
+    {id:124, text:"Мастер 2", start_date:"10-08-2017 19:40", duration:0.0125, progress: 0, open: true, parent: 2},
+    {id:125, text:"Мастер 2", start_date:"10-08-2017 20:00", duration:0.0125, progress: 0, open: true, parent: 2},
+    {id:126, text:"Мастер 2", start_date:"10-08-2017 20:20", duration:0.0125, progress: 0, open: true, parent: 2},
+    {id:127, text:"Мастер 2", start_date:"10-08-2017 20:40", duration:0.0125, progress: 0, open: true, parent: 2},
+    {id:128, text:"Мастер 2", start_date:"10-08-2017 21:00", duration:0.0125, progress: 0, open: true, parent: 2},
+    {id:129, text:"Мастер 2", start_date:"10-08-2017 21:20", duration:0.0125, progress: 0, open: true, parent: 2},
+    {id:130, text:"Мастер 2", start_date:"10-08-2017 21:40", duration:0.0125, progress: 0, open: true, parent: 2},
+    {id:162, text:"Мастер 2", start_date:"10-08-2017 10:00", pr:"1", duration:0.0125, progress: 0, open: true, parent: 2},
+    
+    {id:11, text:"Мастер 3", start_date:"10-08-2017 08:30", duration:0.0125, progress: 0, open: true, parent: 3},
+    {id:12, text:"Мастер 3", start_date:"10-08-2017 08:50", pl:"1", duration:0.0125, progress: 0, open: true, parent: 3},
+    {id:163, text:"Мастер 3", start_date:"10-08-2017 09:10", duration:0.0125, progress: 0, open: true, parent: 3},
+    {id:52, text:"Мастер 3", start_date:"10-08-2017 09:30", duration:0.0125, progress: 0, open: true, parent: 3},
+    {id:53, text:"Мастер 3", start_date:"10-08-2017 09:50", duration:0.0125, progress: 0, open: true, parent: 3},
+    {id:55, text:"Мастер 3", start_date:"10-08-2017 10:30", duration:0.0125, progress: 0, open: true, parent: 3},
+    {id:56, text:"Мастер 3", start_date:"10-08-2017 10:50", duration:0.0125, work_start:"08 17 2017 10:50:00", well_done:"0", progress: 0, open: true, parent: 3},
+    {id:57, text:"Мастер 3", start_date:"10-08-2017 11:10", duration:0.0125, work_start:"08 17 2017 11:10:00", well_done:"1", progress: 0, open: true, parent: 3},
+    {id:58, text:"Мастер 3", start_date:"10-08-2017 11:30", duration:0.0125, work_start:"08 17 2017 11:30:00", well_done:"1", progress: 0, open: true, parent: 3},
+    {id:59, text:"Мастер 3", start_date:"10-08-2017 11:50", duration:0.0125, progress: 0, open: true, parent: 3},
+    {id:60, text:"Мастер 3", start_date:"10-08-2017 12:10", duration:0.0125, progress: 0, open: true, parent: 3},
+    {id:61, text:"Мастер 3", start_date:"10-08-2017 12:30", diner:"1", duration:0.026, progress: 0, open: true, parent: 3},
+    {id:62, text:"Мастер 3", start_date:"10-08-2017 13:10", duration:0.0125, progress: 0, open: true, parent: 3},
+    {id:63, text:"Мастер 3", start_date:"10-08-2017 13:30", duration:0.0125, progress: 0, open: true, parent: 3},
+    {id:64, text:"Мастер 3", start_date:"10-08-2017 13:50", duration:0.0125, progress: 0, open: true, parent: 3},
+    {id:65, text:"Мастер 3", start_date:"10-08-2017 14:10", duration:0.0125, progress: 0, open: true, parent: 3},
+    {id:66, text:"Мастер 3", start_date:"10-08-2017 14:30", duration:0.0125, progress: 0, open: true, parent: 3},
+    {id:67, text:"Мастер 3", start_date:"10-08-2017 14:50", duration:0.0125, progress: 0, open: true, parent: 3},
+    {id:68, text:"Мастер 3", start_date:"10-08-2017 15:10", duration:0.0125, progress: 0, open: true, parent: 3},
+    {id:69, text:"Мастер 3", start_date:"10-08-2017 15:30", duration:0.0125, progress: 0, open: true, parent: 3},
+    {id:93, text:"Мастер 3", start_date:"10-08-2017 15:50", duration:0.0125, progress: 0, open: true, parent: 3},
+    {id:94, text:"Мастер 3", start_date:"10-08-2017 16:10", duration:0.0125, progress: 0, open: true, parent: 3},
+    {id:95, text:"Мастер 3", start_date:"10-08-2017 16:30", duration:0.0125, progress: 0, open: true, parent: 3},
+    {id:96, text:"Мастер 3", start_date:"10-08-2017 16:50", duration:0.0125, progress: 0, open: true, parent: 3},
+    {id:131, text:"Мастер 3", start_date:"10-08-2017 17:10", duration:0.0125, progress: 0, open: true, parent: 3},
+    {id:132, text:"Мастер 3", start_date:"10-08-2017 17:30", duration:0.0125, progress: 0, open: true, parent: 3},
+    {id:133, text:"Мастер 3", start_date:"10-08-2017 17:50", duration:0.0125, progress: 0, open: true, parent: 3},
+    {id:134, text:"Мастер 3", start_date:"10-08-2017 18:10", duration:0.0125, progress: 0, open: true, parent: 3},
+    {id:135, text:"Мастер 3", start_date:"10-08-2017 18:30", duration:0.0125, progress: 0, open: true, parent: 3},
+    {id:136, text:"Мастер 3", start_date:"10-08-2017 18:50", duration:0.0125, progress: 0, open: true, parent: 3},
+    {id:137, text:"Мастер 3", start_date:"10-08-2017 19:10", duration:0.0125, progress: 0, open: true, parent: 3},
+    {id:138, text:"Мастер 3", start_date:"10-08-2017 19:30", duration:0.0125, progress: 0, open: true, parent: 3},
+    {id:139, text:"Мастер 3", start_date:"10-08-2017 19:50", duration:0.0125, progress: 0, open: true, parent: 3},
+    {id:140, text:"Мастер 3", start_date:"10-08-2017 20:10", duration:0.0125, progress: 0, open: true, parent: 3},
+    {id:141, text:"Мастер 3", start_date:"10-08-2017 20:30", duration:0.0125, progress: 0, open: true, parent: 3},
+    {id:142, text:"Мастер 3", start_date:"10-08-2017 20:50", duration:0.0125, progress: 0, open: true, parent: 3},
+    {id:143, text:"Мастер 3", start_date:"10-08-2017 21:10", duration:0.0125, progress: 0, open: true, parent: 3},
+    {id:144, text:"Мастер 3", start_date:"10-08-2017 21:30", duration:0.0125, progress: 0, open: true, parent: 3},
+    {id:145, text:"Мастер 3", start_date:"10-08-2017 21:50", duration:0.0125, progress: 0, open: true, parent: 3},
+    {id:164, text:"Мастер 3", start_date:"10-08-2017 10:10", pr:"1", duration:0.0125, progress: 0, open: true, parent: 3},
+    
+    {id:5, text:"Мастер 4", start_date:"10-08-2017 08:20", duration:0.0125, progress: 0, open: true, parent: 4},
+    {id:6, text:"Мастер 4", start_date:"10-08-2017 08:40", pl:"1", duration:0.0125, progress: 0, open: true, parent: 4},
+    {id:165, text:"Мастер 4", start_date:"10-08-2017 09:00", duration:0.0125, progress: 0, open: true, parent: 4},
+    {id:70, text:"Мастер 4", start_date:"10-08-2017 09:20", duration:0.0125, progress: 0, open: true, parent: 4},
+    {id:71, text:"Мастер 4", start_date:"10-08-2017 09:40", duration:0.0125, progress: 0, open: true, parent: 4},
+    {id:72, text:"Мастер 4", start_date:"10-08-2017 10:00", duration:0.0125, progress: 0, open: true, parent: 4},
+    {id:73, text:"Мастер 4", start_date:"10-08-2017 10:20", duration:0.0125, progress: 0, open: true, parent: 4},
+    {id:74, text:"Мастер 4", start_date:"10-08-2017 11:00", duration:0.0125, progress: 0, open: true, parent: 4},
+    {id:75, text:"Мастер 4", start_date:"10-08-2017 11:20", duration:0.0125, progress: 0, open: true, parent: 4},
+    {id:76, text:"Мастер 4", start_date:"10-08-2017 11:40", duration:0.0125, progress: 0, open: true, parent: 4},
+    {id:77, text:"Мастер 4", start_date:"10-08-2017 12:00", duration:0.0125, progress: 0, open: true, parent: 4},
+    {id:78, text:"Мастер 4", start_date:"10-08-2017 12:20", duration:0.0125, progress: 0, open: true, parent: 4},
+    {id:79, text:"Мастер 4", start_date:"10-08-2017 12:40", duration:0.0125, progress: 0, open: true, parent: 4},
+    {id:80, text:"Мастер 4", start_date:"10-08-2017 13:00", diner:"1", duration:0.026, progress: 0, open: true, parent: 4},
+    {id:81, text:"Мастер 4", start_date:"10-08-2017 13:40", duration:0.0125, progress: 0, open: true, parent: 4},
+    {id:82, text:"Мастер 4", start_date:"10-08-2017 14:00", duration:0.0125, progress: 0, open: true, parent: 4},
+    {id:83, text:"Мастер 4", start_date:"10-08-2017 14:20", duration:0.0125, progress: 0, open: true, parent: 4},
+    {id:84, text:"Мастер 4", start_date:"10-08-2017 14:40", duration:0.0125, progress: 0, open: true, parent: 4},
+    {id:85, text:"Мастер 4", start_date:"10-08-2017 15:00", duration:0.0125, progress: 0, open: true, parent: 4},
+    {id:86, text:"Мастер 4", start_date:"10-08-2017 15:20", duration:0.0125, progress: 0, open: true, parent: 4},
+    {id:87, text:"Мастер 4", start_date:"10-08-2017 15:40", duration:0.0125, progress: 0, open: true, parent: 4},
+    {id:88, text:"Мастер 4", start_date:"10-08-2017 16:00", duration:0.0125, progress: 0, open: true, parent: 4},
+    {id:89, text:"Мастер 4", start_date:"10-08-2017 16:20", duration:0.0125, progress: 0, open: true, parent: 4},
+    {id:90, text:"Мастер 4", start_date:"10-08-2017 16:40", duration:0.0125, progress: 0, open: true, parent: 4},
+    {id:91, text:"Мастер 4", start_date:"10-08-2017 17:00", duration:0.0125, progress: 0, open: true, parent: 4},
+    {id:92, text:"Мастер 4", start_date:"10-08-2017 17:20", duration:0.0125, progress: 0, open: true, parent: 4},
+    {id:146, text:"Мастер 4", start_date:"10-08-2017 17:40", duration:0.0125, progress: 0, open: true, parent: 4},
+    {id:147, text:"Мастер 4", start_date:"10-08-2017 18:00", duration:0.0125, progress: 0, open: true, parent: 4},
+    {id:148, text:"Мастер 4", start_date:"10-08-2017 18:20", duration:0.0125, progress: 0, open: true, parent: 4},
+    {id:149, text:"Мастер 4", start_date:"10-08-2017 18:40", duration:0.0125, progress: 0, open: true, parent: 4},
+    {id:150, text:"Мастер 4", start_date:"10-08-2017 19:00", duration:0.0125, progress: 0, open: true, parent: 4},
+    {id:151, text:"Мастер 4", start_date:"10-08-2017 19:20", duration:0.0125, progress: 0, open: true, parent: 4},
+    {id:152, text:"Мастер 4", start_date:"10-08-2017 19:40", duration:0.0125, progress: 0, open: true, parent: 4},
+    {id:153, text:"Мастер 4", start_date:"10-08-2017 20:00", duration:0.0125, progress: 0, open: true, parent: 4},
+    {id:154, text:"Мастер 4", start_date:"10-08-2017 20:20", duration:0.0125, progress: 0, open: true, parent: 4},
+    {id:155, text:"Мастер 4", start_date:"10-08-2017 20:40", duration:0.0125, progress: 0, open: true, parent: 4},
+    {id:156, text:"Мастер 4", start_date:"10-08-2017 21:00", duration:0.0125, progress: 0, open: true, parent: 4},
+    {id:157, text:"Мастер 4", start_date:"10-08-2017 21:20", duration:0.0125, progress: 0, open: true, parent: 4},
+    {id:158, text:"Мастер 4", start_date:"10-08-2017 21:40", duration:0.0125, progress: 0, open: true, parent: 4},
+    {id:166, text:"Мастер 4", start_date:"10-08-2017 10:40", pr:"1", duration:0.0125, progress: 0, open: true, parent: 4},
+    
     ]
   };
   
@@ -34,11 +199,11 @@
     
     <div class="wrapper container-fluid">
       <div class="row">
-	<aside class="col-md-2 big-font text-center">
+	<header class="col-md-2 text-center">
 		    
 	  Сервис-Бюро Форд
 		    
-	</aside>
+	</header>
 	
 	<section class="col-md-7 silver-td header-height big-font">
 		    
@@ -63,7 +228,7 @@
 	
 	<!-- Левая навигация -->
 	
-	<aside class="col-md-2 col-sm-3">
+	<aside id="leftSide" class="col-md-2 col-sm-3">
 		    
 	  <p class="alert alert-info big-font">Цели</p>
 	  
@@ -76,37 +241,256 @@
 	  
 	  <br />
 	  
-	  <button type="button" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-repeat" aria-hidden="true"></span></button>
+	  <button type="button" class="btn btn-sm btn-default medium-font" onclick="showUnslist()">
+	  <span class="glyphicon glyphicon-repeat" aria-hidden="true"></span></button>
 	  &nbsp;Возражения
 	  
-	  <br /><br />
+	  <div id="unsuccessList" class="unsuccessList">
+	    <br />
+	    
+	    <input type="checkbox" /> Дорого<br />
+	    <input type="checkbox" /> Записать клиента<br />
+	    <input type="checkbox" /> Развеять сомнения<br />
 	  
-	  <input type="checkbox" /> Дорого<br />
-	  <input type="checkbox" /> Записать клиента<br />
-	  <input type="checkbox" /> Развеять сомнения<br />
-	
-	  <br /><br />
+	  </div>
+	  
+	  <div class="row">
+	    <section class="col-md-12">
+	      <br />
+	      <button type="button" class="btn btn-sm btn-default medium-font">
+		<span class="glyphicon glyphicon-compressed" aria-hidden="true"></span>
+	      </button>
+	      &nbsp;
+	    </section>
+	  </div>
+	  
+	  <div class="row">
+	    <section class="col-md-12">
+	      <br />
+	      <button type="button" class="btn btn-sm btn-default medium-font">
+		<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+	      </button>
+	      &nbsp;Спецпредложения
+	    </section>
+	  </div>
+	  
+	  <div class="row">
+	    <section class="col-md-12">
+	      <br />
+	      <button type="button" class="btn btn-sm btn-default medium-font">
+		<span class="glyphicon glyphicon-fire" aria-hidden="true"></span>
+	      </button>
+	      &nbsp;Рекомендации
+	    </section>
+	  </div>
 	  
 	</aside>
 
 	<!-- Центральная часть -->
 	
-	<section class="col-md-8 col-sm-6">
+	<section id="centerSide" class="col-md-8 col-sm-6">
 	
 	  <!-- Гант -->
 	  
 	  <div class="row">
 	  
 	    <section class="col-md-12 col-sm-12">
-			
+	    <br />
 	      <div id="gantt_here" class="ganttTable"></div>
 	
 	      <script type="text/javascript">
 		gantt.config.scale_unit = "hour";
 		gantt.config.step = 1;
 		gantt.config.date_scale = "%H:%i";
+		gantt.config.columns = [
+		    {name:"text", label:"Мастер", width:160, align: "left", tree:true }
+		];
+		gantt.config.order_branch = false;
+		gantt.config.drag_mode = false;
+		gantt.config.drag_move = false;
+		gantt.config.drag_links = false;
+		gantt.config.drag_resize = false;
+		gantt.config.drag_progress = false;
+		gantt.config.initial_scroll = true;
 		gantt.init("gantt_here");
+		
+		gantt.templates.task_text=function(start, end, task){
+		    return '';
+		};
+		
+		gantt.attachEvent("onTaskDblClick", function(id,e){
+
+		    return false;
+		});
+		gantt.attachEvent("onTaskClick", function(id,e){
+		    
+		    return false;
+		});
+		gantt.attachEvent("onTaskRowClick", function(id,row){
+		    
+		    return false;
+		});
+		
+		function createBox(sizes, class_name){
+			var box = document.createElement('div');
+			box.style.cssText = [
+				"height:" + sizes.height + "px",
+				"line-height:" + sizes.height + "px",
+				"width:" + sizes.width + "px",
+				"top:" + sizes.top + 'px',
+				"left:" + sizes.left + "px",
+				"position:absolute"
+			].join(";");
+			box.className = class_name;
+			return box;
+		}
+
+		gantt.addTaskLayer(function show_hidden(task) {
+		  if (!task.$open && gantt.hasChild(task.id)) {
+		    var sub_height = gantt.config.row_height - 5,
+			    el = document.createElement('div'),
+			    sizes = gantt.getTaskPosition(task);
+
+		    var sub_tasks = gantt.getChildren(task.id);
+
+		    var child_el;
+
+		    for (var i = 0; i < sub_tasks.length; i++){
+		      var child = gantt.getTask(sub_tasks[i]);
+		      var child_sizes = gantt.getTaskPosition(child);
+		      var child_color = child.color;
+
+		      child_el = createBox({
+			height: sub_height,
+			top:sizes.top+2,
+			left:child_sizes.left,
+			width: child_sizes.width
+		      }, "child_preview gantt_task_line");
+		      
+		      $(child_el).css('background-color', child_color);
+		      $(child_el).attr('task_id', child.parent);
+		      $(child_el).attr('work_start', child.work_start);
+		      $(child_el).attr('well_done', child.well_done);
+		      $(child_el).attr('diner', child.diner);
+		      $(child_el).attr('pl', child.pl);
+		      $(child_el).attr('pr', child.pr);
+		      
+		      el.appendChild(child_el);
+		    }
+		    return el;
+		  }
+		  return false;
+		});
+		
 		gantt.parse(tasks);
+
+		var date = new Date();
+		var curTime = date.toString(); //date.getHours() + ':' + date.getMinutes;
+		
+		/* Массив записей клиентов */
+		
+		var clientArrey = {1: '<button type="button" class="task-button dropdown-toggle" data-toggle="dropdown">&nbsp;</button><ul class="dropdown-menu padding-20" role="menu" aria-labelledby="dLabel"><li>Иванов Иван Иванович</li><li>+7 999 555 4242</li><li>г/н Р545НР 72</li><li><br /><form class="form-group" method="GET" action="page1.php"><input type="hidden" name="clientName" value="Иванов Иван Иванович" /><input type="hidden" name="clientPhone" value="+7 999 555 4242" /><input type="hidden" name="clientNamber" value="г/н Р545НР 72" /><button type="submit" class="btn btn-xs btn-success">Открыть заявку</button></form></li></ul>',
+				   2: '<button type="button" class="task-button dropdown-toggle" data-toggle="dropdown">&nbsp;</button><ul class="dropdown-menu padding-20" role="menu" aria-labelledby="dLabel"><li>Петров Михайл Сергеевич</li><li>+7 999 555 9561</li><li>г/н В545МТ 72</li><li><br /><form class="form-group" method="GET" action="page1.php"><input type="hidden" name="clientName" value="Петров Михайл Сергеевич" /><input type="hidden" name="clientPhone" value="+7 999 555 9561" /><input type="hidden" name="clientNamber" value="г/н В545МТ 72" /><button type="submit" class="btn btn-xs btn-success">Открыть заявку</button></form></li></ul>',
+				   3: '<button type="button" class="task-button dropdown-toggle" data-toggle="dropdown">&nbsp;</button><ul class="dropdown-menu padding-20" role="menu" aria-labelledby="dLabel"><li>Сидоров Петр Михайлович</li><li>+7 999 555 4561</li><li>г/н А545КУ 72</li><li><br /><form class="form-group" method="GET" action="page1.php"><input type="hidden" name="clientName" value="Сидоров Петр Михайлович" /><input type="hidden" name="clientPhone" value="+7 999 555 4561" /><input type="hidden" name="clientNamber" value="г/н А545КУ 72" /><button type="submit" class="btn btn-xs btn-success">Открыть заявку</button></form></li></ul>',
+				   4: '<button type="button" class="task-button dropdown-toggle" data-toggle="dropdown">&nbsp;</button><ul class="dropdown-menu padding-20" role="menu" aria-labelledby="dLabel"><li>Попов Алекстанд Иванович</li><li>+7 999 555 8491</li><li>г/н С545ТМ 72</li><li><br /><form class="form-group" method="GET" action="page1.php"><input type="hidden" name="clientName" value="Попов Алекстанд Иванович" /><input type="hidden" name="clientPhone" value="+7 999 555 8491" /><input type="hidden" name="clientNamber" value="г/н С545ТМ 72" /><button type="submit" class="btn btn-xs btn-success">Открыть заявку</button></form></li></ul>'
+				  };
+		
+		/* проход по всем таскам */
+		
+		$(".gantt_task_line").each(function(){
+		
+		  var task_id = $(this).attr('task_id');					// определяем id текущей таски
+		  var work_start = $(this).attr('work_start') ? $(this).attr('work_start') : 0;
+		  var well_done = $(this).attr('well_done') ? $(this).attr('well_done') : 0;
+		  var diner = $(this).attr('diner') ? $(this).attr('diner') : 0;
+		  var pl = $(this).attr('pl') ? $(this).attr('pl') : 0;
+		  var pr = $(this).attr('pr') ? $(this).attr('pr') : 0;
+		  var tillWork = Date.parse(work_start) - Date.parse(curTime);
+		  
+		  if(work_start != 0){
+		    
+		    if(tillWork > 0 && tillWork < 1800000){
+		    
+		      $(this).html(clientArrey[task_id])
+			     .css({backgroundColor: 'orange',
+			       border: '1px orange solid'
+			 });
+		    }else if(tillWork < 0 && tillWork > -1800000){
+		    
+		      $(this).html(clientArrey[task_id])
+			     .css({backgroundColor: 'blue',
+			       border: '1px blue solid'
+			 });
+		    }else if(tillWork < -1800000){
+		    
+		      if(well_done == 1){
+		      
+			$(this).html(clientArrey[task_id])
+			      .css({backgroundColor: 'green',
+				border: '1px green solid'
+			      });
+		      }else{
+		      
+			$(this).html(clientArrey[task_id])
+			      .css({backgroundColor: 'red',
+				border: '1px red solid'
+			      });
+		      
+		      }
+		    }else{
+		    
+		      $(this).html(clientArrey[task_id]);
+		    }
+		  }else{
+		  
+		    $(this).css({backgroundColor: 'white',
+				 border: '1px silver solid'
+			    });
+		  }
+		  
+		  if(diner == 1)
+		  
+		    $(this).html('Обед')
+			   .css({backgroundColor: 'silver',
+				 border: '1px gray solid',
+				 textAlign: 'center'
+			   });
+			   
+		  if(pl == 1)
+		  
+		    $(this).html('ПЛ')
+			   .css({backgroundColor: 'silver',
+				 border: '1px gray solid',
+				 textAlign: 'center'
+			   });
+			   
+		  if(pr == 1)
+		  
+		    $(this).html('ПР')
+			   .css({backgroundColor: 'silver',
+				 border: '1px gray solid',
+				 textAlign: 'center'
+			   });
+		});
+		
+		
+		$(".gantt_scale_cell").each(function(){
+		
+		  var cellTime = $(this).text();
+		  
+		  if((date.getHours() + ':00') == cellTime){
+		      
+		      var leftTime = date.getMinutes() / 60 * 100;
+			
+		      $(this).html(
+			'<div style="width:100%;height:100%;">' +date.getHours() + ':' 
+			+ ((date.getMinutes() < 10) ? '0'+date.getMinutes() : date.getMinutes()) + '</div>'
+			+ '<div style="position:absolute;width:2px;height:100%;top:0;left:' 
+			+ leftTime + '%;background:red;z-index:2;"></div>');
+			
+		  }
+		});
+		
 	      </script>
 			<br />
 	    </section>
@@ -119,30 +503,41 @@
 	    <!-- Колонка 1 -->
 	    <section class="col-md-4 col-sm-4 text-center">
 	  
-	      <select>
-		<option>Иванов Иван Иваныч</optiion>
-		<option>Петров Иван Иваныч</optiion>
-		<option>Сидоров Иван Иваныч</optiion>
-	      </select>
+	      <form class="form-inline">
+		<input type="text" class="form-control input-large" placeholder="Поиск по имени">
+		<button type="submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+	      </form>
+	      <br />
+	      <form class="form-inline">
+		<input type="text" class="form-control input-large" placeholder="Поиск по VIN">
+		<button type="submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+	      </form>
 
 	    </section>
 	    
 	    <!-- Колонка 2 -->
 	    <section class="col-md-4 col-sm-4 text-center">
 	  	
-	      <select>
-		<option>+7 999 888 2211</optiion>
-		<option>+7 999 888 2211</optiion>
-		<option>+7 999 888 2211</optiion>
-	      </select>
+	      <form class="form-inline">
+		<input type="text" class="form-control input-large" placeholder="Поиск по телефону">
+		<button type="submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+		<button type="submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span></button>
+	      </form>
 	      
 	    </section>
 	    
 	    <!-- Колонка 3 -->
-	    <section class="col-md-4 col-sm-4 text-center">
+	    <section class="col-md-4 col-sm-4">
 	  
-	      <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="left" 
-		      data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">История</button>
+	      <button class="btn btn-success margin-left-45" id="dLabel" role="button" data-toggle="dropdown">История</button>
+	      
+	      <ul class="dropdown-menu padding-20" role="menu" aria-labelledby="dLabel">
+		<li>01.03.2017, ТО 2</li>
+		<li>14.10.2016, Шиномонтаж</li>
+		<li>06.05.2016, ТО-1</li>
+		<li>13.01.2016, ТО-0</li>
+	      </ul>
+
 	    </section>
 	  </div>
 	  
@@ -150,51 +545,66 @@
 	  
 	  <div class="row padding-20">
 	    <section class="col-md-12 col-sm-12 padding-20">
-	    
-	    <br /><br /><br />
-
-	      <input type="checkbox" /> TO - 0
-	    
+	    <p class="lead">
+	      Гарантия: <input type="checkbox" /> ДА <input type="checkbox" /> НЕТ <br /><br />
+	      
+	      Записан 30.08.2017 в 15.30 к мастеру Иванову 
+	      <button type="button" class="btn btn-success">Изменить</button> <br /><br />
+	    </p>
 	    </section>
 	    
-	    <section class="col-md-12 col-sm-12 padding-20 border-silver">
-	    
-	      <input type="checkbox" /> у нас бесплатная диагностика, приезжайте посмотрим автомобиль, потом определимся по срокам ремонта и цене, на какое время записать? <br />
-	      <input type="checkbox" /> Это не займет много времени, мы проверим ваш автомобиль, и дадим точные рекомендации, при необходимости закажем запасные части, когда вам удобно? <br />
-	      <input type="checkbox" /> Удобное время работы с 8-00 до 22-00<br />
-	      <input type="checkbox" /> Спец инструмент и диагностика, для вашего автомобиля<br />
-	    
+	    <section class="col-md-12 col-sm-12">
+	      
+	      <button type="button" class="btn btn-success">Открыть заявку</button>
+	      <button type="button" class="btn btn-success">ПСК</button>
+	      
 	    </section>
 	    
-	    <section class="col-md-4 col-sm-4">
+	    <section class="col-md-12 col-sm-12">
 	      <br /><br />
 	      
 	      <button type="button" class="btn btn-danger">Out</button>
-	      <button type="button" class="btn btn-success">Открыть заявку</button>
-	      <button type="button" class="btn btn-success">ПСК</button>
+	    </section>
+	   
+	    
+	  </div>
+	  
+	  <!-- Кнопки страниц -->
+      
+	  <div class="row">
+	    <section class="col-md-1 col-sm-1">
+
 	    </section>
 	    
-	    <section class="col-md-8 col-sm-8">
+	    <section id="navButtons" class="col-md-11 col-sm-11">
+	    
+	      <br /><br />
+
+	      <a href="./" role="button" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
+	      <a href="page1.html" role="button" class="btn btn-default">1</a>
+	      <a href="page2.html" role="button" class="btn btn-default">2</a>
+	      <a href="page3.html" role="button" class="btn btn-default">3</a>
+	      <a href="page4.html" role="button" class="btn btn-default">4</a>
+	      <a href="page5.html" role="button" class="btn btn-default">5</a>
+	      <a href="page6.html" role="button" class="btn btn-default">6</a>
+	      <a href="page7.html" role="button" class="btn btn-default">7</a>
+	      
 	      <br /><br />
 	      
-	      Записать 
-	      <button type="button" class="btn btn-success">ДАТА +30 дн.</button>
-	      
 	    </section>
-	    
 	  </div>
 
 	</section>
 	
 	<!-- Правая колонка -->
 	
-	<section class="col-md-2 col-sm-3" style="padding:0;margin:0;">
+	<section id="rightSide" class="col-md-2 col-sm-3 bg-silver" style="padding:0;margin:0;">
 	
 	  <div id="datepicker" class="small"></div>
 	
-	  <aside class="col-md-12 col-sm-12">
+	  <section class="col-md-12 col-sm-12 right-section">
 		    
-	    <p class="alert alert-info">Доп. аргументы</p>
+	    <p class="well well-sm">Доп. аргументы</p>
 	    
 	    <input type="checkbox" /> Бесплатная мойка<br />
 	    <input type="checkbox" /> Бесплатный ужин<br />
@@ -204,32 +614,7 @@
 	    <input type="checkbox" /> Супер предложение 3<br />
 	    <input type="checkbox" /> Сезонные предложение<br />
 	    <input type="checkbox" /> Не выполненные рекомендации<br />
-	  </aside>
-	</section>
-      </div>
-    
-      <!-- Кнопки страниц -->
-      
-      <div class="row">
-	<section class="col-md-2 col-sm-3">
-
-	</section>
-	
-	<section class="col-md-10 col-sm-9">
-	
-	  <br /><br />
-
-	  <a href="./" role="button" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
-	  <a href="page1.html" role="button" class="btn btn-default">1</a>
-	  <a href="page2.html" role="button" class="btn btn-default">2</a>
-	  <a href="page3.html" role="button" class="btn btn-default">3</a>
-	  <a href="page4.html" role="button" class="btn btn-default">4</a>
-	  <a href="page5.html" role="button" class="btn btn-default">5</a>
-	  <a href="page6.html" role="button" class="btn btn-default">6</a>
-	  <a href="page7.html" role="button" class="btn btn-default">7</a>
-	  
-	  <br /><br />
-	  
+	  </section>
 	</section>
       </div>
       

@@ -8,37 +8,25 @@
     
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-    <link href="codebase/dhtmlxgantt.css" rel="stylesheet"> 
     <link href="css/jquery-ui.min.css" rel="stylesheet">
+    <link href="css/kendo.common.min.css" rel="stylesheet" />
+    <link href="css/kendo.default.min.css" rel="stylesheet" />
         
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
-    <script src="codebase/dhtmlxgantt.js"></script>
+    <script src="js/kendo.all.min.js"></script>
 
   </head>
   <body>
-
-  <script type="text/javascript">
-  
-  var tasks = {
-    data:[
-        {id:1, text:"Мастер 1", start_date:"10-08-2017 09:00", duration:0.5, progress: 0, open: true},
-        {id:2, text:"Мастер 2", start_date:"10-08-2017 09:00", duration:0.2, progress: 0,   open: true},
-        {id:3, text:"Мастер 3", start_date:"10-08-2017 09:00", duration:0.1, progress: 0, open: true},
-        {id:4, text:"Мастер 4", start_date:"10-08-2017 09:00", duration:0.3, progress: 0,   open: true},
-    ]
-  };
-  
-  </script>
     
     <div class="wrapper container-fluid">
       <div class="row">
-	<aside class="col-md-2 big-font text-center">
+	<header class="col-md-2 text-center">
 		    
 	  Сервис-Бюро Форд
 		    
-	</aside>
+	</header>
 	
 	<section class="col-md-7 silver-td header-height big-font">
 		    
@@ -64,152 +52,104 @@
 	<!-- Левая навигация -->
 	
 	<aside class="col-md-2 col-sm-3">
-		    
-	  <p class="alert alert-info big-font">Цели</p>
-	  
-	  <ul style="padding-left:10px;">
-	    <li>Убедить, что Автоград лучшее СТО</li>
-	    <li>Записать клиента</li>
-	    <li>Развеять сомнения</li>
-	    <li>Вовремя напомнить о договоренности</li>
-	  </ul>
-	  
-	  <br />
-	  
-	  <button type="button" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-repeat" aria-hidden="true"></span></button>
-	  &nbsp;Возражения
-	  
-	  <br /><br />
-	  
-	  <input type="checkbox" /> Дорого<br />
-	  <input type="checkbox" /> Записать клиента<br />
-	  <input type="checkbox" /> Развеять сомнения<br />
+
+	  <button type="button" class="btn btn-sm btn-default" style="margin-left:15px;" onclick="location.replace('page1.php');">&nbsp;&nbsp;Создать запись&nbsp;&nbsp;</button>
 	
 	  <br /><br />
 	  
+	  <ul class="list-group submenu">
+	    <li class="list-group-item"><span class="glyphicon glyphicon-home" aria-hidden="true"></span><a href="./">Рабочий стол</a></li>
+	    <li class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span><a href="page1.php">Клиенты</a></li>
+	    <li class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span><a href="#">Планировщик</a></li>
+	    <li class="list-group-item"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span><a href="#">Отчеты</a></li>
+	    <li class="list-group-item"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span><a href="#">Журнал записи</a></li>
+	    <li class="list-group-item"><span class="glyphicon glyphicon-ruble" aria-hidden="true"></span><a href="#">Зарплата</a></li>
+	    <li class="list-group-item"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span><a href="#">Настройки</a></li>
+	  </ul>
+		    <br /><br /><br /><br />
 	</aside>
 
 	<!-- Центральная часть -->
 	
-	<section class="col-md-8 col-sm-6">
+	<section id="centerHeight" class="col-md-8 col-sm-6">
+	
+	  <!-- Планировщик -->
 	  
-	  <!-- Центральные три колонки -->
+	  <div id="scheduler"></div>
+
 	  
+	  <script type="text/javascript">
+	  
+	    $("#scheduler").kendoScheduler({
+	      // The current date of the scheduler
+	      date: new Date(),
+	      views: [
+		"day",
+		{ type: "week", selected: true },
+		"month"
+	      ]
+	    });
+	    
+	  </script>
+	  
+	  <!-- Кнопки страниц -->
+      
 	  <div class="row">
-	  
-	    <!-- Колонка 1 -->
-	    <section class="col-md-4 col-sm-4 text-center">
-	  
-	      <h3>Выдача автомобиля</h3>
-	      
-	      <input type="text" class="form-control" value="Петров Владислав Сергеевич" /><br />
-	      <input type="text" class="form-control" value="+7 904 567 43 55" /><br />
-	      <input type="text" class="form-control" value="Форд Фокус, р525нр72, 2015" /><br />
-	      <input type="text" class="form-control" value="Пробег: 15 000 км." /><br />
+	    <section class="col-md-1 col-sm-1">
 
 	    </section>
 	    
-	    <!-- Колонка 2 -->
-	    <section class="col-md-4 col-sm-4">
-	  	
+	    <section id="navButtons" class="col-md-11 col-sm-11">
+	    
 	      <br /><br />
-	      Вы можете поставит 10 баллов? Что можно сделать, я всё зафиксировала	      
-	    </section>
-	    
-	    <!-- Колонка 3 -->
-	    <section class="col-md-4 col-sm-4 text-center">
-	  
-	    </section>
-	  </div>
-	  
-	  <!-- Чекбоксы -->
-	  
-	  <div class="row">
-	    <section class="col-md-12 col-sm-12">
-	    
-	      <input type="checkbox" /> По выполненным работам и по цене вопросов не осталось
-	    
-	    </section>
-	    
-	    <section class="col-md-12 col-sm-12">
-	      <br /><br />
-	      
-	      <button type="button" class="btn btn-success">Распечатать з/н</button>
-	      <button type="button" class="btn btn-success">Принять оплату</button>
-	      <button type="button" class="btn btn-success">ПСК</button>
-	      
-	      <br /><br />
-	      
-	    </section>
-	    
-	    <section class="col-md-3 col-sm-3">
-	      
-	      <button type="button" class="btn btn-danger">Возврат на ремзону</button>
-	    
-	    </section>
-	    
-	    <section class="col-md-9 col-sm-9">
-	      
-	      <textarea class="form-control" rows="3">Комментарий причин возврата и недовольства</textarea><br />
-	      
-	    </section>
-	    
-	  </div>
 
+	      <a href="./" role="button" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
+	      <a href="page1.php" role="button" class="btn btn-default">Карточка клиента</a>
+		<a href="page5.html" role="button" class="btn btn-default">Оформление заезда</a>
+		<a href="page6.html" role="button" class="btn btn-default">Выдача автомобиля</a>
+		<a href="page7.html" role="button" class="btn btn-default">Планировщик</a>
+	      
+	      <br /><br />
+	      
+	    </section>
+	  </div>    
 	</section>
 	
 	<!-- Правая колонка -->
 	
 	<section class="col-md-2 col-sm-3" style="padding:0;margin:0;">
 	
-	  <aside class="col-md-12 col-sm-12">
+	  <div id="datepicker" class="small"></div>
+	
+	  <section class="col-md-12 col-sm-12 right-section">
 		    
-	    <p class="alert alert-info">Не выполнено</p>
+	    <p class="well well-sm">Расписание</p>
 	    
-	    <ul style="padding-left:10px;">
-	      <li>Износ передних колодок 80%</li>
-	      <li>Замена ремня ГРМ на 100 000 км.</li>
+	    <ul style="padding-left:15px;">
+	      <li>Список дел в порядке убывания срочности</li>
+	      <li>Пропущенный звонок</li>
+	      <li>Просроченный заезд</li>
+	      <li>Звонок 24ч</li>
 	    </ul>
-	    
-	    <p class="alert alert-info">Скоро акции</p>
-	    
-	    <ul style="padding-left:10px;">
-	      <li>Шиномонтаж с 01.10</li>
-	      <li>Хранение шин с 01.10</li>
-	      <li>Межсервисный осмотр, через 5 тыс.км</li>
-	    </ul>
-
-	  </aside>
+	  </section>
 	</section>
       </div>
+    </div>
     
-      <!-- Кнопки страниц -->
-      
-      <div class="row">
-	<section class="col-md-2 col-sm-3">
-
-	</section>
-	
-	<section class="col-md-10 col-sm-9">
-	
-	  <br /><br />
-
-	  <a href="./" role="button" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
-	  <a href="page1.html" role="button" class="btn btn-default">1</a>
-	  <a href="page2.html" role="button" class="btn btn-default">2</a>
-	  <a href="page3.html" role="button" class="btn btn-default">3</a>
-	  <a href="page4.html" role="button" class="btn btn-default">4</a>
-	  <a href="page5.html" role="button" class="btn btn-default">5</a>
-	  <a href="page6.html" role="button" class="btn btn-default">6</a>
-	  <a href="page7.html" role="button" class="btn btn-default">7</a>
-	  
-	  <br /><br />
-	  
-	</section>
-      </div>
-      
     <footer></footer>    
-    
+    	  
     <script src="js/main.js"></script>
+    
+    <script type="text/javascript">
+    
+      var centerHeight = $("#centerHeight").height();
+
+      if(winWidth > 500){
+	
+	$("#leftSide").css('height', centerHeight);
+	$("#rightSide").css('height', centerHeight);
+      }
+    </script>
+    
   </body>
 </html>

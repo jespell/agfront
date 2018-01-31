@@ -1,14 +1,35 @@
 header {
-  background-color:silver;
+  color:white;
+  height:50px;
+  font-size:14pt;
+  padding-top:10px;
+  background-color:#344E62;
 }
 
 aside {
   color:white;
   padding:10px;
-  height:100%;
   background-color:#344E62;
 }
 
+.new-checkbox {
+  border:1px blue solid;
+  padding:5px;
+}
+
+.right-section {
+  color:#303030;
+  padding:10px;
+  background-color:#DCDCDC;
+}
+
+.bg-silver {
+  background-color:#DCDCDC;
+}
+
+.bg-darkblue {
+  background-color:#212C36;
+}
 
 .wrapper .submenu li {
   border:none;
@@ -38,17 +59,23 @@ aside {
   font-size:26pt;
 }
 
+.medium-font {
+  font-size:14pt;
+}
+
 .silver-td {
   background-color:silver;
 }
 
-.text-center {
-  text-align:center;
+.vcenter {
+  display: inline-block;
+  float: none;
+  vertical-align: middle;
 }
 
 .ganttTable {
   width:100%;
-  height:250px;
+  height:350px;
 }
 
 .section-table {
@@ -56,10 +83,37 @@ aside {
   overflow:scroll;
 }
 
+.padding-5 {
+  padding:5px;
+}
+
 .padding-20 {
   padding:20px;
 }
 
+.margin-left-45 {
+  margin-left:45px;
+}
+
 .border-silver {
   border:1px silver solid;
+}
+
+.unsuccessList {
+  display:none;
+}
+
+.zindex-99 {
+  z-index:9999;
+}
+
+.task-button {
+  background:none;
+  width:100%;
+  height:100%;
+  border:none;
+}
+
+.today {
+  background:red;
 }

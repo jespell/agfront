@@ -50,16 +50,16 @@ gantt.addTaskLayer(function show_hidden(task) {
     var sub_height = gantt.config.row_height - 5,
 	    el = document.createElement('div'),
 	    sizes = gantt.getTaskPosition(task);
-
+    
     var sub_tasks = gantt.getChildren(task.id);
-
+    
     var child_el;
-
+    
     for (var i = 0; i < sub_tasks.length; i++){
       var child = gantt.getTask(sub_tasks[i]);
       var child_sizes = gantt.getTaskPosition(child);
       var child_color = child.color;
-
+      
       child_el = createBox({
 	height: sub_height,
 	top:sizes.top+2,
@@ -90,9 +90,9 @@ var curTime = date.toString(); //date.getHours() + ':' + date.getMinutes;
 /* Массив записей клиентов */
 
 var clientArrey = {1: '<button type="button" class="task-button dropdown-toggle" data-toggle="dropdown">&nbsp;</button><ul class="dropdown-menu padding-20" role="menu" aria-labelledby="dLabel"><li>Иванов Иван Иванович</li><li>+7 999 555 4242</li><li>г/н Р545НР 72</li><li><br /><form class="form-group" method="GET" action="page1.php"><input type="hidden" name="clientName" value="Иванов Иван Иванович" /><input type="hidden" name="clientPhone" value="+7 999 555 4242" /><input type="hidden" name="clientNamber" value="г/н Р545НР 72" /><button type="submit" class="btn btn-xs btn-success">Открыть заявку</button></form></li></ul>',
-		    2: '<button type="button" class="task-button dropdown-toggle" data-toggle="dropdown">&nbsp;</button><ul class="dropdown-menu padding-20" role="menu" aria-labelledby="dLabel"><li>Петров Михайл Сергеевич</li><li>+7 999 555 9561</li><li>г/н В545МТ 72</li><li><br /><form class="form-group" method="GET" action="page1.php"><input type="hidden" name="clientName" value="Петров Михайл Сергеевич" /><input type="hidden" name="clientPhone" value="+7 999 555 9561" /><input type="hidden" name="clientNamber" value="г/н В545МТ 72" /><button type="submit" class="btn btn-xs btn-success">Открыть заявку</button></form></li></ul>',
-		    3: '<button type="button" class="task-button dropdown-toggle" data-toggle="dropdown">&nbsp;</button><ul class="dropdown-menu padding-20" role="menu" aria-labelledby="dLabel"><li>Сидоров Петр Михайлович</li><li>+7 999 555 4561</li><li>г/н А545КУ 72</li><li><br /><form class="form-group" method="GET" action="page1.php"><input type="hidden" name="clientName" value="Сидоров Петр Михайлович" /><input type="hidden" name="clientPhone" value="+7 999 555 4561" /><input type="hidden" name="clientNamber" value="г/н А545КУ 72" /><button type="submit" class="btn btn-xs btn-success">Открыть заявку</button></form></li></ul>',
-		    4: '<button type="button" class="task-button dropdown-toggle" data-toggle="dropdown">&nbsp;</button><ul class="dropdown-menu padding-20" role="menu" aria-labelledby="dLabel"><li>Попов Алекстанд Иванович</li><li>+7 999 555 8491</li><li>г/н С545ТМ 72</li><li><br /><form class="form-group" method="GET" action="page1.php"><input type="hidden" name="clientName" value="Попов Алекстанд Иванович" /><input type="hidden" name="clientPhone" value="+7 999 555 8491" /><input type="hidden" name="clientNamber" value="г/н С545ТМ 72" /><button type="submit" class="btn btn-xs btn-success">Открыть заявку</button></form></li></ul>'
+		   2: '<button type="button" class="task-button dropdown-toggle" data-toggle="dropdown">&nbsp;</button><ul class="dropdown-menu padding-20" role="menu" aria-labelledby="dLabel"><li>Петров Михайл Сергеевич</li><li>+7 999 555 9561</li><li>г/н В545МТ 72</li><li><br /><form class="form-group" method="GET" action="page1.php"><input type="hidden" name="clientName" value="Петров Михайл Сергеевич" /><input type="hidden" name="clientPhone" value="+7 999 555 9561" /><input type="hidden" name="clientNamber" value="г/н В545МТ 72" /><button type="submit" class="btn btn-xs btn-success">Открыть заявку</button></form></li></ul>',
+		   3: '<button type="button" class="task-button dropdown-toggle" data-toggle="dropdown">&nbsp;</button><ul class="dropdown-menu padding-20" role="menu" aria-labelledby="dLabel"><li>Сидоров Петр Михайлович</li><li>+7 999 555 4561</li><li>г/н А545КУ 72</li><li><br /><form class="form-group" method="GET" action="page1.php"><input type="hidden" name="clientName" value="Сидоров Петр Михайлович" /><input type="hidden" name="clientPhone" value="+7 999 555 4561" /><input type="hidden" name="clientNamber" value="г/н А545КУ 72" /><button type="submit" class="btn btn-xs btn-success">Открыть заявку</button></form></li></ul>',
+		   4: '<button type="button" class="task-button dropdown-toggle" data-toggle="dropdown">&nbsp;</button><ul class="dropdown-menu padding-20" role="menu" aria-labelledby="dLabel"><li>Попов Алекстанд Иванович</li><li>+7 999 555 8491</li><li>г/н С545ТМ 72</li><li><br /><form class="form-group" method="GET" action="page1.php"><input type="hidden" name="clientName" value="Попов Алекстанд Иванович" /><input type="hidden" name="clientPhone" value="+7 999 555 8491" /><input type="hidden" name="clientNamber" value="г/н С545ТМ 72" /><button type="submit" class="btn btn-xs btn-success">Открыть заявку</button></form></li></ul>'
 		  };
 
 /* проход по всем таскам */
@@ -112,60 +112,53 @@ $(".gantt_task_line").each(function(){
     if(tillWork > 0 && tillWork < 1800000){
     
       $(this).html(clientArrey[task_id])
-	      .css({backgroundColor: 'orange',
-		border: '1px orange solid'
+	     .css({backgroundColor: 'orange',
+		   border: '1px orange solid'
 	  });
     }else if(tillWork < 0 && tillWork > -1800000){
     
       $(this).html(clientArrey[task_id])
-	      .css({backgroundColor: 'blue',
-		border: '1px blue solid'
+	     .css({backgroundColor: 'blue',
+		   border: '1px blue solid'
 	  });
     }else if(tillWork < -1800000){
     
       if(well_done == 1){
-      
 	$(this).html(clientArrey[task_id])
-	      .css({backgroundColor: 'green',
-		border: '1px green solid'
+	       .css({backgroundColor: 'green',
+		     border: '1px green solid'
 	      });
       }else{
-      
 	$(this).html(clientArrey[task_id])
-	      .css({backgroundColor: 'red',
-		border: '1px red solid'
+	       .css({backgroundColor: 'red',
+		     border: '1px red solid'
 	      });
-      
       }
     }else{
-    
       $(this).html(clientArrey[task_id]);
     }
   }else{
-  
-    $(this).css({backgroundColor: 'white',
+    $(this).html('<button type="button" class="task-button dropdown-toggle" data-toggle="dropdown">&nbsp;</button><ul class="dropdown-menu padding-5" role="menu" aria-labelledby="dLabel"><li class="text-center"><button type="submit" class="btn btn-xs btn-success" onclick="location.replace(\'page1.php\');">Создать запись</button></li></ul>')
+	   .css({backgroundColor: 'white',
 		  border: '1px silver solid'
-	    });
+	   });
   }
   
   if(diner == 1)
-  
     $(this).html('Обед')
 	    .css({backgroundColor: 'silver',
 		  border: '1px gray solid',
 		  textAlign: 'center'
 	    });
-	    
+
   if(pl == 1)
-  
     $(this).html('ПЛ')
 	    .css({backgroundColor: 'silver',
 		  border: '1px gray solid',
 		  textAlign: 'center'
 	    });
-	    
+
   if(pr == 1)
-  
     $(this).html('ПР')
 	    .css({backgroundColor: 'silver',
 		  border: '1px gray solid',
@@ -186,28 +179,27 @@ $(".gantt_scale_cell").each(function(){
 	'<div style="width:100%;height:100%;">' +date.getHours() + ':' 
 	+ ((date.getMinutes() < 10) ? '0'+date.getMinutes() : date.getMinutes()) + '</div>'
 	+ '<div style="position:absolute;width:2px;height:100%;top:0;left:' 
-	+ leftTime + '%;background:red;z-index:2;"></div>');
-	
+	+ leftTime + '%;background:red;z-index:2;"></div>'
+      );
   }
 });
 
 gantt.attachEvent("onGanttScroll", function (left, top){
 
-    $(".gantt_scale_cell").each(function(){
+  $(".gantt_scale_cell").each(function(){
 
-      var cellTime = $(this).text();
-      
-      if(cellTime == (date.getHours() + ':00')){
-	  
-	  var leftTime = date.getMinutes() / 60 * 100;
-	    
-	  $(this).html(
-	    '<div style="width:100%;height:100%;">' +date.getHours() + ':' 
-	    + ((date.getMinutes() < 10) ? '0'+date.getMinutes() : date.getMinutes()) + '</div>'
-	    + '<div style="position:absolute;width:2px;height:100%;top:0;left:' 
-	    + leftTime + '%;background:red;z-index:2;"></div>');
-	    
-      }
-    });
+    var cellTime = $(this).text();
+    
+    if(cellTime == (date.getHours() + ':00')){
+	
+	var leftTime = date.getMinutes() / 60 * 100;
+	
+	$(this).html(
+	  '<div style="width:100%;height:100%;">' +date.getHours() + ':' 
+	  + ((date.getMinutes() < 10) ? '0'+date.getMinutes() : date.getMinutes()) + '</div>'
+	  + '<div style="position:absolute;width:2px;height:100%;top:0;left:' 
+	  + leftTime + '%;background:red;z-index:2;"></div>'
+	);
+    }
+  });
 });
-		
