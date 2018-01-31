@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Интерфейс</title>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="codebase/dhtmlxgantt.css" rel="stylesheet"> 
+    
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="codebase/dhtmlxgantt.js"></script>
+
+  </head>
+  <body>
+
+  <script type="text/javascript">
+  
+  var tasks = {
+    data:[
+        {id:1, text:"Мастер 1", start_date:"10-08-2017 09:00", duration:0.5, progress: 0, open: true},
+        {id:2, text:"Мастер 2", start_date:"10-08-2017 09:00", duration:0.2, progress: 0,   open: true},
+        {id:3, text:"Мастер 3", start_date:"10-08-2017 09:00", duration:0.1, progress: 0, open: true},
+        {id:4, text:"Мастер 4", start_date:"10-08-2017 09:00", duration:0.3, progress: 0,   open: true},
+    ]
+  };
+  
+  </script>
+	  
+    <div class="wrapper container-fluid">
+      <div class="row">
+	<aside class="col-md-2 col-sm-3 big-font text-center">
+		    
+	  Сервис-Бюро Форд
+		    
+	</aside>
+	
+	<section class="col-md-7 col-sm-6 silver-td header-height big-font">
+		    
+	  <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
+	  <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+	  <span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>
+		    
+	</section>
+	
+	<section class="col-md-3 col-sm-3 silver-td header-height big-font">
+		    
+	  <span class="glyphicon glyphicon-option-horizontal" aria-hidden="true"></span>
+	  
+<!-- 	  Оператор 1 -->
+		    
+	</section>
+      </div>
+
+      <div class="row">
+	<aside class="col-md-2 col-sm-3">
+
+	  <button type="button" class="btn btn-sm btn-default" style="margin-left:15px;">&nbsp;&nbsp;Создать запись&nbsp;&nbsp;</button>
+	
+	  <br /><br />
+	  
+	  <ul class="list-group submenu">
+	    <li class="list-group-item"><span class="glyphicon glyphicon-home" aria-hidden="true"></span><a href="./">Рабочий стол</a></li>
+	    <li class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span><a href="page1.html">Клиенты</a></li>
+	    <li class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span><a href="#">Планировщик</a></li>
+	    <li class="list-group-item"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span><a href="#">Отчеты</a></li>
+	    <li class="list-group-item"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span><a href="#">Журнал записи</a></li>
+	    <li class="list-group-item"><span class="glyphicon glyphicon-ruble" aria-hidden="true"></span><a href="#">Зарплата</a></li>
+	    <li class="list-group-item"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span><a href="#">Настройки</a></li>
+	  </ul>
+		    <br /><br /><br /><br />
+	</aside>
+
+	<section class="col-md-10 col-sm-9">
+	
+	  <div class="row">
+	  
+	    <section class="col-md-12 col-sm-12">
+			
+	      <div id="gantt_here" class="ganttTable"></div>
+	
+	      <script type="text/javascript">
+		gantt.config.scale_unit = "hour";
+		gantt.config.step = 1;
+		gantt.config.date_scale = "%H:%i";
+		gantt.init("gantt_here");
+		gantt.parse(tasks);
+	      </script>
+			<br />
+	    </section>
+	  </div>
+	  
+	  <div class="row">
+
+	    <section class="col-md-6 col-sm-6">
+		      
+	      <table class="table table-bordered">
+		<tr class="danger"><td>Срочные события</td></tr>
+	      </table>	   
+			
+	    </section>
+	    
+	    <section class="col-md-6 col-sm-6">
+		      
+	      <table class="table table-bordered">
+		<tr class="success"><td>Плановые события</td></tr>
+	      </table>
+			
+	    </section>
+	  </div>
+	  
+	  <div class="row">
+
+	    <section class="col-md-6 col-sm-6 section-table">
+		      
+	      <table class="table table-bordered">
+		<tr><td>Пропущенный звонок от +7 999 888 2211</td></tr>
+		<tr><td>Пропущенный звонок от +7 999 888 2211</td></tr>
+		<tr><td>Пропущенный звонок от +7 999 888 2211</td></tr>
+		<tr><td>Пропущенный звонок от +7 999 888 2211</td></tr>
+		<tr><td>Пропущенный звонок от +7 999 888 2211</td></tr>
+		<tr><td>Пропущенный звонок от +7 999 888 2211</td></tr>
+		<tr><td>Пропущенный звонок от +7 999 888 2211</td></tr>
+		<tr><td>Пропущенный звонок от +7 999 888 2211</td></tr>
+		<tr><td>Пропущенный звонок от +7 999 888 2211</td></tr>
+		<tr><td>Пропущенный звонок от +7 999 888 2211</td></tr>
+		<tr><td>Пропущенный звонок от +7 999 888 2211</td></tr>
+		<tr><td>Пропущенный звонок от +7 999 888 2211</td></tr>
+		<tr><td>Пропущенный звонок от +7 999 888 2211</td></tr>
+	      </table>	   
+			
+	    </section>
+	    
+	    <section class="col-md-6 col-sm-6 section-table">
+		      
+	      <table class="table table-bordered">
+		<tr><td>Запись на 10.08 14:00, Иванов И. И.</td></tr>
+		<tr><td>Запись на 10.08 14:00, Иванов И. И.</td></tr>
+		<tr><td>Запись на 10.08 14:00, Иванов И. И.</td></tr>
+		<tr><td>Запись на 10.08 14:00, Иванов И. И.</td></tr>
+		<tr><td>Запись на 10.08 14:00, Иванов И. И.</td></tr>
+		<tr><td>Запись на 10.08 14:00, Иванов И. И.</td></tr>
+		<tr><td>Запись на 10.08 14:00, Иванов И. И.</td></tr>
+		<tr><td>Запись на 10.08 14:00, Иванов И. И.</td></tr>
+		<tr><td>Запись на 10.08 14:00, Иванов И. И.</td></tr>
+		<tr><td>Запись на 10.08 14:00, Иванов И. И.</td></tr>
+		<tr><td>Запись на 10.08 14:00, Иванов И. И.</td></tr>
+		<tr><td>Запись на 10.08 14:00, Иванов И. И.</td></tr>
+		<tr><td>Запись на 10.08 14:00, Иванов И. И.</td></tr>
+	      </table>
+			
+	    </section>
+	  </div>
+	</section>
+      </div>
+    
+    <footer></footer>    
+    
+    <script src="js/main.js"></script>
+        
+  </body>
+</html>
