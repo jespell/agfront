@@ -7,7 +7,7 @@ $("#datepicker").datepicker({
 $("#navButtons a").each(function(){
   
   if($(this).attr('href') == window.location.pathname.replace(/^.+\//g, ''))
-
+    
     $(this).removeClass('btn-default').addClass('btn-info').addClass('active');
 });
 
@@ -22,18 +22,15 @@ if(winWidth > 500){
   $("#rightSide").css('height', centerSide);
 }
 
-function showUnslist() {
-
-  if (document.getElementById("unsuccessList")) {
+function showUnslist(){
+  if(document.getElementById("unsuccessList")){
     
-      var obj = document.getElementById("unsuccessList");
+    var obj = document.getElementById("unsuccessList");
     
-      if (obj.style.display != "block") {
-	
-	obj.style.display = "block";
-      }      
-      else{ 
-	obj.style.display = "none";
-      }
+    if(obj.style.display != "block"){
+      obj.style.display = "block";
+    }else{ 
+      obj.style.display = "none";
+    }
   }
 }
